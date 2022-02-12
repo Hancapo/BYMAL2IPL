@@ -13,7 +13,7 @@ namespace BYMAL2IPL
         public string ModelName { get; set; }
         public int Interior { get; set; }
         public Vector3 Position { get; set; }
-        public Vector4 Rotation { get; set; }
+        public Quaternion Rotation { get; set; }
         public int LOD { get; set; }
     }
 }

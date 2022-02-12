@@ -8,7 +8,7 @@ namespace BYMAL2IPL
 {
     public class MK8ObjCSV
     {
-        Dictionary<int, string> MK8Objs { get; set; } = new();
+        public Dictionary<int, string> MK8Objs { get; set; } = new();
 
 
 

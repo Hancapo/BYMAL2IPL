@@ -17,19 +17,21 @@ namespace BYMAL2IPL
         }
 
 
-        public void ExportIPL(List<Instance> instances)
+        public void ExportIPL(string exportpath)
         {
             StringBuilder sb = new();
-            if (instances.Count > 0)
+            if (IPLinstances.Count > 0)
             {
                 sb.AppendLine("inst");
-                foreach (Instance inst in instances)
+                foreach (Instance inst in IPLinstances)
                 {
-                    sb.AppendLine($"{inst.Id}, {inst.ModelName}, {inst.Position.X}, {inst.Position.Y}, {inst.Position.Z}, {inst.Rotation.X}, {inst.Rotation.Y}, {inst.Rotation.Z}, {inst.Rotation.W}, {inst.LOD}");
+                    sb.AppendLine($"{inst.Id}, {inst.ModelName}, {inst.Interior}, {inst.Position.X}, {inst.Position.Y}, {inst.Position.Z}, {inst.Rotation.X}, {inst.Rotation.Y}, {inst.Rotation.Z}, {inst.Rotation.W}, {inst.LOD}");
                 }
                 sb.AppendLine("end");
 
             }
+
+            File.WriteAllText(exportpath + "/course_muunt.ipl", sb.ToString());
         }
 
     }
